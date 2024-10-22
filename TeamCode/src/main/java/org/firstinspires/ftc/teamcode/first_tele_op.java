@@ -70,8 +70,8 @@ public class first_tele_op extends LinearOpMode{
             revolutions = arm_pos/ppr;
 
             //angle of spool starting form 0 degrees
-            angle = revolutions*360;
-            distance = circ*revolutions;
+            angle = revolutions * 360;
+            distance = circ * revolutions;
 
             //sets motor speeds for arcade driving using stick values
             l_motor.setPower(ly + rx);
