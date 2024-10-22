@@ -9,10 +9,6 @@ import com.qualcomm.robotcore.hardware.IMU;
 
 @TeleOp
 public class first_tele_op extends LinearOpMode{
-    private Gyroscope imu;
-    private DcMotor l_motor;
-    private DcMotor r_motor;
-    private DcMotor arm_motor;
 
     //arm encoder values
     //pulses per rotation of motor
@@ -39,10 +35,10 @@ public class first_tele_op extends LinearOpMode{
 
     @Override
     public void runOpMode() {
-        imu = hardwareMap.get(Gyroscope.class, "imu");
-        l_motor = hardwareMap.get(DcMotor.class, "l_motor:");
-        r_motor = hardwareMap.get(DcMotor.class, "r_motor");
-        arm_motor = hardwareMap.get(DcMotor.class, "arm_motor");
+        Gyroscope imu = hardwareMap.get(Gyroscope.class, "imu");
+        DcMotor l_motor = hardwareMap.get(DcMotor.class, "l_motor:");
+        DcMotor r_motor = hardwareMap.get(DcMotor.class, "r_motor");
+        DcMotor arm_motor = hardwareMap.get(DcMotor.class, "arm_motor");
 
         //l_motor.setDirection(DcMotorSimple.Direction.Reverse);
         //r_motor.setDirection(DcMotorSimple.Direction.Reverse);
