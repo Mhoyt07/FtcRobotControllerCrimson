@@ -40,8 +40,8 @@ public class first_tele_op extends LinearOpMode{
         DcMotor r_motor = hardwareMap.get(DcMotor.class, "r_motor");
         DcMotor arm_motor = hardwareMap.get(DcMotor.class, "arm_motor");
 
-        //l_motor.setDirection(DcMotorSimple.Direction.Reverse);
-        //r_motor.setDirection(DcMotorSimple.Direction.Reverse);
+        //l_motor.setDirection(DcMotorSimple.Direction.REVERSE);
+        //r_motor.setDirection(DcMotorSimple.Direction.REVERSE);
 
         arm_motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); // Reset the motor encoder
         arm_motor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER); // Turn the motor back on when we are done
