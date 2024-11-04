@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
@@ -26,6 +27,10 @@ public class FTCRobot2024 extends LinearOpMode {
         pivot_2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
 
+        //sets the position to run to first
+        pivot_1.setTargetPosition(0);
+        pivot_2.setTargetPosition(0);
+        arm.setTargetPosition(0);
 
         //sets motors to pid run to position mode
         pivot_1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -89,15 +94,23 @@ public class FTCRobot2024 extends LinearOpMode {
             if (gamepad2.b) {
                 pivot_1.setTargetPosition(pivot_pos_1);
                 pivot_2.setTargetPosition(pivot_pos_1);
+                pivot_1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                pivot_2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.y) {
                 pivot_1.setTargetPosition(pivot_pos_2);
                 pivot_2.setTargetPosition(pivot_pos_2);
+                pivot_1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                pivot_2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.x) {
                 pivot_1.setTargetPosition(pivot_pos_3);
                 pivot_2.setTargetPosition(pivot_pos_3);
+                pivot_1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                pivot_2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.a) {
                 pivot_1.setTargetPosition(pivot_pos_4);
                 pivot_2.setTargetPosition(pivot_pos_4);
+                pivot_1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                pivot_2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             }
 
             //arm code
@@ -106,14 +119,19 @@ public class FTCRobot2024 extends LinearOpMode {
             //arm set position
             if (gamepad2.left_bumper) {
                 arm.setTargetPosition(arm_pos_1);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.dpad_right) {
                 arm.setTargetPosition(arm_pos_2);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.dpad_up) {
                 arm.setTargetPosition(arm_pos_3);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.dpad_left) {
                 arm.setTargetPosition(arm_pos_4);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             } else if (gamepad2.dpad_down) {
                 arm.setTargetPosition(arm_pos_5);
+                arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             }
 
             //claw code
