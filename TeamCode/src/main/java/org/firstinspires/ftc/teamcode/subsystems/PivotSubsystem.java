@@ -34,6 +34,7 @@ public class PivotSubsystem {
         pivot_2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
     }
 
+    //code to make the pivot move to positions
     public void to_1() {
         pivot_1.setTargetPosition(Constants.pivot_pos_1);
         pivot_2.setTargetPosition(Constants.pivot_pos_1);
@@ -60,6 +61,14 @@ public class PivotSubsystem {
         pivot_2.setTargetPosition(Constants.pivot_pos_4);
         pivot_1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         pivot_2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+    }
+
+    //returns current position of pivot
+    public int current_position1() {
+        return pivot_1.getCurrentPosition();
+    }
+    public int current_position2() {
+        return pivot_2.getCurrentPosition();
     }
 }
 

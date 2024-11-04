@@ -42,6 +42,9 @@ public class FTCSubsystemTeleOp2024 extends LinearOpMode {
 
             //telemetry data add
             telemetry.addData("Arm Position", arm_subsystem.current_position());
+            telemetry.addData("Pivot Motor 1 Position", pivot_subsystem.current_position1());
+            telemetry.addData("Pivot Motor 2 Position", pivot_subsystem.current_position2());
+            telemetry.update();
         }
     }
 }
