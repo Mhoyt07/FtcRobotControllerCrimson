@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
+import org.firstinspires.ftc.teamcode.subsystems.ArmSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.DriveSubsystem;
 import org.firstinspires.ftc.teamcode.subsystems.PivotSubsystem;
 
@@ -20,6 +21,9 @@ public class FTCSubsystemTeleOp2024 extends LinearOpMode {
         //init pivot subsystem
         PivotSubsystem pivot_subsystem = new PivotSubsystem(hardwareMap, this);
 
+        //init arm subsystem
+        ArmSubsystem arm_subsystem = new ArmSubsystem(hardwareMap, this);
+
         waitForStart();
         while (opModeIsActive()) {
             //drivetrian stuff
@@ -35,6 +39,9 @@ public class FTCSubsystemTeleOp2024 extends LinearOpMode {
             } else if (gamepad2.a) {
                 pivot_subsystem.to_4();
             }
+
+            //telemetry data add
+            telemetry.addData("Arm Position", arm_subsystem.current_position());
         }
     }
 }
